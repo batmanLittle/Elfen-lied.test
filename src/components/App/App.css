@@ -1,0 +1,11 @@
+.app {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--lilac-color);
+  --lilac-color: rgba(174, 151, 232, 1);
+  --white-color: rgba(255, 255, 255, 1);
+  width: 100%;
+  height: 100vh;
+}
