@@ -6,6 +6,9 @@
   padding: 0px 15px;
   margin-right: 23px;
   border: 1px solid red;
+  position: absolute;
+  top: 0px;
+  z-index: 2;
 }
 
 .header__container {

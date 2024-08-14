@@ -2,3 +2,8 @@
   font-family: Euclid Circular A;
   src: url(../vendor/Euclid\ Circular\ A\ Medium.ttf);
 }
+
+@font-face {
+  font-family: Floreste;
+  src: url(../vendor/FloresteWavy-BWPqd.otf);
+}
