@@ -40,8 +40,9 @@ function Categories() {
       <div className="categories__container">
         <h2>категории</h2>
         <Swiper
+          className="categories__list"
           spaceBetween={11.14}
-          slidesPerView={"auto"}
+          slidesPerView={3}
           speed={900}
           autoplay={{
             delay: 2000,
@@ -54,7 +55,11 @@ function Categories() {
           }}
         >
           {slides.map((slide, index) => (
-            <SwiperSlide key={slide.id}>
+            <SwiperSlide
+              key={slide.id}
+              className="categories__item"
+              slidesPerView={3}
+            >
               <h3 className="categories__item-title">{slide.title}</h3>
               <img
                 className="categories__item-img"

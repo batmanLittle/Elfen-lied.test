@@ -18,16 +18,13 @@
   align-items: center;
   gap: 70px;
 }
-.swiper {
+.categories__list {
   width: 100%;
 
   height: 100%;
   height: 517px;
 }
-.swiper-wrapper {
-  justify-content: space-between;
-}
-.swiper-slide {
+.categories__item {
   width: 100%;
   max-width: 428px;
   position: relative;
@@ -106,10 +103,10 @@
     gap: 35px;
   }
 
-  .swiper {
+  .categories__list {
     height: 288px;
   }
-  .swiper-slide {
+  .categories__item {
     max-width: 238.42px;
     max-height: 288px;
     background-size: 216px 256.77px;
