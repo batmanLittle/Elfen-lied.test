@@ -70,15 +70,15 @@ function InfoProduct() {
     };
   }, []);
 
-  // useEffect(() => {
-  //   if (width > 768) {
-  //     const intervalId = setInterval(() => {
-  //       setActiveSlide((prev) => (prev + 1) % slides.length);
-  //     }, 5000);
+  useEffect(() => {
+    if (width > 768) {
+      const intervalId = setInterval(() => {
+        setActiveSlide((prev) => (prev + 1) % slides.length);
+      }, 5000);
 
-  //     return () => clearInterval(intervalId);
-  //   }
-  // }, [width, slides.length]);
+      return () => clearInterval(intervalId);
+    }
+  }, [width, slides.length]);
 
   return (
     <div className="info-product">
@@ -161,8 +161,45 @@ function InfoProduct() {
 
 export default InfoProduct;
 
-//Главная страница без анимации - 1920, отступы снаружи 20 и 20, контейнер 1880
-// активная карточка первая отступ до контента 60
 
-// Главная с включенной анимацией - 1920, отступы снаружи 20 и 20, контейнер 1880
-// карточка, когда активна не первая отступ до контента слева 60
+
+
+
+
+
+.ticker__text {
+  color: rgba(255, 255, 255, 1);
+  margin: auto;
+  text-align: right;
+  font-variant-numeric: lining-nums proportional-nums;
+  font-family: Merriweather;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 110%; /* 24.2px */
+  text-transform: uppercase;
+  white-space: nowrap;
+  animation: text 10s linear infinite;
+}
+.ticker {
+  overflow: hidden;
+  max-width: 100%;
+}
+.ticker__block {
+  height: 60px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin: 0px;
+  background-color: rgba(245, 73, 50, 1);
+}
+
+@keyframes text {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}

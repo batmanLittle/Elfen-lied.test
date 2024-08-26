@@ -1,11 +1,8 @@
 .header {
   width: 100%;
   display: flex;
-  justify-content: center;
-  max-width: 1900px;
-  padding: 0px 15px;
-  margin-right: 23px;
-  border: 1px solid red;
+  max-width: 1920px;
+  padding: 53px 123px 0px 60px;
   position: absolute;
   top: 0px;
   z-index: 2;
@@ -14,11 +11,9 @@
 .header__container {
   display: flex;
   justify-content: space-between;
-  padding: 53px 23px 0px 0px;
   max-width: 1736px;
   width: 100%;
-
-  gap: 15px;
+  gap: 50px;
 }
 
 .header__logo {
@@ -29,7 +24,6 @@
 .header__menu {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   justify-content: space-between;
   max-width: 1120px;
   width: 100%;
@@ -83,4 +77,58 @@
   width: 22px;
   height: 20px;
   cursor: pointer;
+}
+.header__button-telephone {
+  display: none;
+}
+@media screen and (max-width: 1500px) {
+  .header {
+    padding: 40px 15px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .header {
+    padding: 25px 15px;
+  }
+  .header__logo {
+    width: 77px;
+    height: 27px;
+    position: absolute;
+    left: 0px;
+  }
+  .header__container {
+    gap: 0px;
+    justify-content: end;
+    position: relative;
+    gap: 18px;
+  }
+
+  .header__menu {
+    width: min-content;
+  }
+
+  .header__link {
+    display: none;
+  }
+
+  .header__search-text {
+    display: none;
+  }
+  .header__search::before {
+    width: 24px;
+    height: 24px;
+  }
+
+  .header__menu-user {
+    gap: 18px;
+  }
+
+  .header__button {
+    width: 24px;
+    height: 24px;
+  }
+  .header__button-telephone {
+    display: none;
+  }
 }

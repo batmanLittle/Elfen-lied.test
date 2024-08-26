@@ -3,6 +3,7 @@ import logo from "../../images/logo.svg";
 import iconFavorites from "../../images/icon-favorites.svg";
 import iconBasket from "../../images/icon-basket.svg";
 import iconUser from "../../images/icon-user.svg";
+import iconTelephone from "../../images/icon-telephone.svg";
 import { NavLink } from "react-router-dom";
 
 function Header() {
@@ -23,7 +24,7 @@ function Header() {
             </NavLink>
           </div>
           <button className="header__search">
-            <p>Поиск</p>
+            <p className="header__search-text">Поиск</p>
           </button>
         </div>
         <div className="header__menu-user">
@@ -35,6 +36,9 @@ function Header() {
           </button>
           <button className="header__button">
             <img src={iconUser} alt="логотип" />
+          </button>
+          <button className="header__button header__button-telephone">
+            <img src={iconTelephone} alt="логотип" />
           </button>
         </div>
       </div>
