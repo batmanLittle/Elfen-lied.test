@@ -26,6 +26,10 @@ import tableJudith from "../images/table-Judith.svg";
 import tableKathryn from "../images/table-Kathryn.svg";
 import tableWendy from "../images/table-Wendy.svg";
 
+import armchairBlog from "../images/blog-armchair.png";
+import designBlog from "../images/blog-design.png";
+import wardrobeBlog from "../images/blog-wardrobe.png";
+
 export const mirrors = [
   {
     id: 1,
@@ -303,5 +307,48 @@ export const slides = [
     alt: "категория столов",
     quantity: "4",
     category: tables,
+  },
+];
+
+export const slidesBlog = [
+  {
+    id: 1,
+    time: "3",
+    number: "01",
+    name: "Laura Busche",
+    title: "новая коллекция кресел",
+    date: "14 Января 2023",
+    src: armchairBlog,
+    alt: "кресло",
+  },
+  {
+    id: 2,
+    time: "3",
+    number: "02",
+    name: "Laura Busche",
+    title: "Световой дизайн в интернете",
+    date: "14 Января 2023",
+    src: designBlog,
+    alt: "световой дизайн",
+  },
+  {
+    id: 3,
+    time: "3",
+    number: "04",
+    name: "Laura Busche",
+    title: "новая коллекция кресел",
+    date: "14 Января 2023",
+    src: wardrobeBlog,
+    alt: "шкаф",
+  },
+  {
+    id: 4,
+    time: "3",
+    number: "03",
+    name: "Laura Busche",
+    title: "Как выбрать шкаф в спальню",
+    date: "14 Января 2023",
+    src: armchairBlog,
+    alt: "кресло",
   },
 ];

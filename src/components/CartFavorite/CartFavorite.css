@@ -1,0 +1,17 @@
+.cart-favorite {
+  display: flex;
+  flex-direction: column;
+  z-index: 5;
+}
+
+.cart-favorite__list {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+@media screen and (max-width: 750px) {
+  .carts__list {
+    gap: 50px;
+  }
+}

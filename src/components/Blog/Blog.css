@@ -4,6 +4,7 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 200px;
+  padding: 0px 15px;
 }
 
 .blog__container {
@@ -13,7 +14,41 @@
   flex-direction: column;
   gap: 70px;
 }
+.blog__info {
+  display: flex;
+  gap: 45px;
+}
 
+.blog__pagination {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  color: var(--white-color);
+}
+.blog__pagination-bullet {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--grey-color);
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.blog__pagination-bullet.active {
+  background-color: var(--white-color);
+}
+.blog__counter {
+  display: flex;
+  gap: 27px;
+  align-items: center;
+  margin-right: 0px;
+  margin-left: auto;
+}
+.blog__counter-dash {
+  width: 63px;
+  border: 1px solid var(--white-color);
+  opacity: 50%;
+}
 .blog__list {
   display: flex;
   width: 100%;
@@ -44,6 +79,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: var(--opacity-white-color);
 }
 .blog__item-info {
   display: flex;
@@ -63,7 +99,8 @@
   text-align: end;
 }
 .blog__item-date {
-  margin-top: 88px;
+  margin-bottom: 5px;
+  margin-top: auto;
 
   max-width: 100px;
 }
@@ -77,4 +114,65 @@
 .blog__item-text {
   font-size: 15px;
   text-transform: uppercase;
+}
+
+@media screen and (max-width: 1100px) {
+  .blog {
+    margin-bottom: 120px;
+  }
+
+  .blog__container {
+    gap: 35px;
+  }
+  .blog__info {
+    gap: 20px;
+  }
+
+  .blog__counter {
+    gap: 20px;
+  }
+  .blog__counter-dash {
+    width: 36px;
+  }
+
+  .blog__item {
+    max-width: 360px;
+    max-height: 269px;
+    padding: 10px 10px 36px 15px;
+    background-size: 100% 87%;
+  }
+
+  .blog__item-img {
+    max-height: 223x;
+    max-width: 156px;
+  }
+  .blog__item-time {
+    left: 78px;
+
+    width: 65px;
+    height: 57px;
+  }
+  .blog__item-info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 147px;
+  }
+  .blog__item-header {
+    margin-top: 5px;
+  }
+  .blog__item-name {
+    max-width: 60px;
+  }
+  .blog__item-date {
+    margin-bottom: 8px;
+    max-width: 64px;
+  }
+
+  .blog__item-text {
+    font-size: 12px;
+  }
+  .blog__item-title {
+    max-width: 100px;
+  }
 }

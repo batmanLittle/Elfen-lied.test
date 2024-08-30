@@ -1,0 +1,69 @@
+.form {
+  width: 100%;
+}
+
+.form-title {
+  text-transform: uppercase;
+  margin-bottom: 66px;
+}
+
+.form-label {
+  font-family: "Euclid Circular A";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+  color: var(--white-color);
+}
+
+.form-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin-bottom: 37px;
+}
+
+.form-input {
+  width: 100%;
+  border-bottom: 2px solid var(--light-green-color);
+}
+
+.form__footer-text {
+  opacity: 100%;
+}
+
+.form__footer {
+  display: flex;
+  gap: 23px;
+  margin-top: 70px;
+}
+
+.form__footer-button {
+  display: flex;
+  gap: 17px;
+}
+
+@media screen and (max-width: 750px) {
+  .form-title {
+    margin-bottom: 60px;
+    font-size: 15px;
+  }
+
+  .form-inputs {
+    gap: 40px;
+    margin-bottom: 27px;
+  }
+
+  .form__footer {
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  .form__footer-button {
+    gap: 10px;
+  }
+  .form__footer-text {
+    font-size: 12px;
+  }
+}

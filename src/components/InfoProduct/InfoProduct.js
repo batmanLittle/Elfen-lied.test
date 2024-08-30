@@ -15,7 +15,7 @@ import "swiper/css";
 import React, { useState, useEffect } from "react";
 import { Virtual, Navigation, Pagination } from "swiper/modules";
 
-function InfoProduct() {
+function InfoProduct({ width }) {
   const [activeSlide, setActiveSlide] = useState(0);
 
   SwiperCore.use([Autoplay]);
@@ -26,7 +26,7 @@ function InfoProduct() {
       textBackground: "Benjamin Moore",
       name: "Santa Trinita",
       description:
-        "Функциональная дизайнерская лампа для создания максимальнокомфортного освещения",
+        "Функциональная дизайнерская лампа для создания максимально комфортного освещения",
       src: lamp,
       price: "150 000 ₽",
       classSlide: "info-product__slider",
@@ -57,28 +57,15 @@ function InfoProduct() {
     },
   ];
 
-  const [width, setWidth] = useState(window.innerWidth);
-
-  const handleResize = () => {
-    setWidth(window.innerWidth);
-  };
-
   useEffect(() => {
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+    if (width > 1200) {
+      const intervalId = setInterval(() => {
+        setActiveSlide((prev) => (prev + 1) % slides.length);
+      }, 3000);
 
-  // useEffect(() => {
-  //   if (width > 768) {
-  //     const intervalId = setInterval(() => {
-  //       setActiveSlide((prev) => (prev + 1) % slides.length);
-  //     }, 5000);
-
-  //     return () => clearInterval(intervalId);
-  //   }
-  // }, [width, slides.length]);
+      return () => clearInterval(intervalId);
+    }
+  }, [width, slides.length]);
 
   return (
     <div className="info-product">
@@ -90,11 +77,16 @@ function InfoProduct() {
             // console.log(activeSlide);
           }}
           modules={[Virtual, Navigation, Pagination]}
-          slidesPerView={3}
-          speed={900}
-          autoplay={{
-            delay: 2000, // время в миллисекундах
-            disableOnInteraction: false,
+          slidesPerView={1}
+          // speed={900}
+          // autoplay={{
+          //   delay: 2000,
+          //   disableOnInteraction: false,
+          // }}
+          breakpoints={{
+            1200: {
+              slidesPerView: 3,
+            },
           }}
         >
           {slides.map((slide, index) => {
@@ -104,7 +96,9 @@ function InfoProduct() {
                 style={{ display: "flex" }}
                 key={slide.id}
                 className={`${slide.classSlide} ${
-                  activeSlide === index
+                  width < 1200
+                    ? "info-product__slider-active"
+                    : activeSlide === index
                     ? `info-product__slider-active ${
                         index === 0 ? "info-product__slider-lilac_active" : ""
                       }`
@@ -115,7 +109,9 @@ function InfoProduct() {
               >
                 <div
                   className={
-                    activeSlide === index
+                    width < 1200
+                      ? "info-product__content"
+                      : activeSlide === index
                       ? "info-product__content"
                       : "display-none"
                   }
@@ -139,14 +135,24 @@ function InfoProduct() {
                 </div>
                 <img
                   className={
-                    activeSlide === index
+                    width < 1200
+                      ? "info-product__slider-img_active"
+                      : activeSlide === index
                       ? "info-product__slider-img_active "
                       : "info-product__slider-img"
                   }
                   src={slide.src}
                   alt={`слайд ${slide.number}`}
                 />
-                <div className={activeSlide === index ? "display-none" : ""}>
+                <div
+                  className={
+                    width < 1200
+                      ? "display-none"
+                      : activeSlide === index
+                      ? "display-none"
+                      : ""
+                  }
+                >
                   <p className="info-product__slider-text">Слайд</p>
                   <p className="info-product__slider-number">{slide.number}</p>
                 </div>
@@ -160,9 +166,3 @@ function InfoProduct() {
 }
 
 export default InfoProduct;
-
-//Главная страница без анимации - 1920, отступы снаружи 20 и 20, контейнер 1880
-// активная карточка первая отступ до контента 60
-
-// Главная с включенной анимацией - 1920, отступы снаружи 20 и 20, контейнер 1880
-// карточка, когда активна не первая отступ до контента слева 60

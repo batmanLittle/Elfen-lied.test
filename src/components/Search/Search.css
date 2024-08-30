@@ -1,0 +1,82 @@
+.search {
+  width: 100%;
+  height: 70px;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  z-index: 3;
+  top: 138px;
+  padding: 0px 15px;
+}
+
+.search__container {
+  overflow: hidden;
+  position: relative;
+  max-width: 1800px;
+  width: 100%;
+  height: 70px;
+  border-radius: 1000px;
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(30px);
+}
+
+.search__input {
+  background-color: inherit;
+  width: 100%;
+  height: 100%;
+  padding-left: 77px;
+}
+
+.search__input::placeholder {
+  color: var(--white-color);
+  font-family: "Euclid Circular A";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  opacity: 1;
+  z-index: 4;
+}
+
+.search__img {
+  position: absolute;
+  left: 6px;
+}
+
+.search__button-close {
+  position: absolute;
+  background-color: inherit;
+  top: 24px;
+  right: 24px;
+}
+
+@media screen and (max-width: 750px) {
+  .search {
+    height: 58px;
+  }
+
+  .search__container {
+    height: 58px;
+  }
+
+  .search__input::placeholder {
+    font-size: 13px;
+
+    line-height: 20px;
+  }
+
+  .search__img {
+    left: 4px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .search__button-close {
+    width: 18px;
+    height: 18px;
+    top: 17px;
+    right: 28px;
+  }
+}

@@ -18,6 +18,7 @@
   --turquoise-color: rgba(41, 208, 217, 1);
   --black-color: rgba(92, 84, 74, 1);
   --grey-color: rgba(202, 207, 251, 1);
+  --opacity-white-color: rgba(255, 255, 255, 0.2);
   width: 100%;
 }
 .dot-grey {
@@ -60,8 +61,50 @@
   font-weight: 500;
   line-height: normal;
 }
+.small-text {
+  opacity: 50%;
+  font-family: "Euclid Circular A";
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.display-none {
+  display: none;
+}
+
+.form-component {
+  z-index: 5;
+  position: absolute;
+  top: 125px;
+  right: 60px;
+
+  width: 100%;
+  max-width: 620px;
+  padding: 48px;
+  border-radius: 30px;
+  background: rgba(51, 32, 101, 0.18);
+  backdrop-filter: blur(100px);
+}
+
+.form-component__title {
+  margin-bottom: 50px;
+  text-transform: uppercase;
+}
+
 @media screen and (max-width: 1100px) {
   .font-floreste {
     font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .form-component {
+    max-width: 360px;
+    top: 22px;
+    right: 15px;
+    padding: 20px 15px 25px;
   }
 }

@@ -1,0 +1,134 @@
+.cart {
+  display: flex;
+  max-width: 523px;
+  gap: 40px;
+}
+.cart__img {
+  width: 89px;
+  height: 142px;
+}
+
+.cart__description {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 12px;
+  max-width: 393px;
+  width: 100%;
+}
+.cart__header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-bottom: 18px;
+  border-bottom: 2px solid var(--light-green-color);
+}
+.cart__dot {
+  display: flex;
+  border: 3px solid var(--white-color);
+  border-radius: 50%;
+  width: 17px;
+  height: 17px;
+}
+
+.cart__name {
+  display: flex;
+  flex-direction: column;
+  height: 51px;
+  justify-content: space-between;
+}
+.cart__name-block {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+.cart__name-title {
+  color: var(--white-color);
+  font-family: "Euclid Circular A";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: uppercase;
+  margin: 0px;
+}
+
+.cart__footer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0px;
+  margin-top: auto;
+  align-items: end;
+}
+
+.cart__price {
+  font-size: 28px;
+}
+
+.cart__footer-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cart__footer-button {
+  border-radius: 50%;
+  display: flex;
+  text-align: center;
+  border: 2px solid var(--white-color);
+  background-color: var(--opacity-white-color);
+  width: 45px;
+  height: 45px;
+  color: var(--white-color);
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 750px) {
+  .cart {
+    max-width: 331px;
+    gap: 32px;
+  }
+  .cart__img {
+    width: 75px;
+    height: 120px;
+  }
+
+  .cart__description {
+    max-width: 224px;
+    margin-top: 6px;
+  }
+  .cart__header {
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--light-green-color);
+  }
+  .cart__dot {
+    width: 16px;
+    height: 16px;
+  }
+
+  .cart__name {
+    height: 36px;
+  }
+  .cart__name-block {
+    gap: 10px;
+  }
+  .cart__name-title {
+    font-size: 15px;
+  }
+
+  .cart__price {
+    font-size: 25px;
+  }
+
+  .cart__footer-buttons {
+    gap: 7px;
+  }
+
+  .cart__footer-button {
+    border: 1px solid var(--white-color);
+
+    width: 35px;
+    height: 35px;
+  }
+}

@@ -7,3 +7,8 @@
   font-family: Floreste;
   src: url(../vendor/FloresteWavy-BWPqd.otf);
 }
+
+@font-face {
+  font-family: Gilroy;
+  src: url(../vendor/Gilroy-Medium.ttf);
+}

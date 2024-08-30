@@ -1,0 +1,22 @@
+.button {
+  padding: 30px 36px;
+  width: max-content;
+  background-color: var(--opacity-white-color);
+  border: 2px solid var(--light-green-color);
+  transform: rotate(-5.992deg);
+  border-radius: 50%;
+}
+.button-text {
+  transform: rotate(5.992deg);
+  font-family: "Euclid Circular A";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+}
+
+@media screen and (max-width: 750px) {
+  .form__button-text {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,40 @@
+.carts {
+  display: flex;
+  flex-direction: column;
+}
+.carts-checkout {
+  position: relative;
+  width: 100%;
+  max-width: 620px;
+}
+.carts__list {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.carts__order-summary {
+  display: flex;
+  width: 100%;
+  margin-top: 83px;
+  justify-content: space-between;
+}
+
+.carts__text {
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 750px) {
+  .carts__list {
+    gap: 50px;
+  }
+
+  .carts__order-summary {
+    margin-top: 51px;
+  }
+
+  .carts__text {
+    font-size: 13px;
+  }
+}
