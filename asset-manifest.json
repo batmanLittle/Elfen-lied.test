@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Elfen-lied.test/static/css/main.e2967587.css",
-    "main.js": "/Elfen-lied.test/static/js/main.96b6bfc4.js",
+    "main.css": "/Elfen-lied.test/static/css/main.056dab07.css",
+    "main.js": "/Elfen-lied.test/static/js/main.4a53c4ca.js",
     "static/js/453.ed3810f9.chunk.js": "/Elfen-lied.test/static/js/453.ed3810f9.chunk.js",
     "static/media/lamp-Artemide.svg": "/Elfen-lied.test/static/media/lamp-Artemide.8c12ade016f2785dba6d087364f48a58.svg",
     "static/media/lamp-Darrell.svg": "/Elfen-lied.test/static/media/lamp-Darrell.6610cf66d314725fec5b66d58f744ee8.svg",
@@ -65,12 +65,12 @@
     "static/media/arrow-down.svg": "/Elfen-lied.test/static/media/arrow-down.078f86976a357a58e9c75ae9c1c5ec24.svg",
     "static/media/icon-catalog.svg": "/Elfen-lied.test/static/media/icon-catalog.9b7c2cec9f092cd1bc6c.svg",
     "static/media/icon-star.svg": "/Elfen-lied.test/static/media/icon-star.8d8e771b9d755ce0770a7567d1881ab5.svg",
-    "main.e2967587.css.map": "/Elfen-lied.test/static/css/main.e2967587.css.map",
-    "main.96b6bfc4.js.map": "/Elfen-lied.test/static/js/main.96b6bfc4.js.map",
+    "main.056dab07.css.map": "/Elfen-lied.test/static/css/main.056dab07.css.map",
+    "main.4a53c4ca.js.map": "/Elfen-lied.test/static/js/main.4a53c4ca.js.map",
     "453.ed3810f9.chunk.js.map": "/Elfen-lied.test/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e2967587.css",
-    "static/js/main.96b6bfc4.js"
+    "static/css/main.056dab07.css",
+    "static/js/main.4a53c4ca.js"
   ]
 }
