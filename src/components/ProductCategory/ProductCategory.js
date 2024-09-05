@@ -1,9 +1,14 @@
 import "./ProductCategory.css";
 import arrow from "../../images/arrow-down.svg";
 import React, { useState, useEffect } from "react";
-
+import Filters from "../Filters/Filters";
 function ProductCategory({ cards }) {
   const [visibleCards, setVisibleCards] = useState(5);
+  const [visibleFilters, setVisibleFilters] = useState(false);
+
+  function handlehandleOpen() {
+    setVisibleFilters((prevState) => !prevState);
+  }
 
   const handleResize = () => {
     if (window.innerWidth < 1101) {
@@ -39,7 +44,8 @@ function ProductCategory({ cards }) {
   return (
     <div className="product-category">
       <div className="product-category__menu">
-        <button>
+        {visibleFilters && <Filters />}
+        <button onClick={handlehandleOpen}>
           <p className="product-category__filters">фильтры</p>
         </button>
         <p className="product-category__quantity">

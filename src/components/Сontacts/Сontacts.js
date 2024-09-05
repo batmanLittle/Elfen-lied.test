@@ -9,8 +9,10 @@ import inIcon from "../../images/icon-in.svg";
 import facebook from "../../images/icon-facebook.svg";
 import arrow from "../../images/arrow-down-white.svg";
 import ButtonClose from "../ButtonClose/ButtonClose";
+import useWindowWidth from "../../hooks/useWindowWidth";
 
-function Сontacts({ width, handleClose }) {
+function Сontacts({ handleClose }) {
+  const width = useWindowWidth();
   useEffect(() => {
     // Создаем карту
     const map = L.map("map").setView(
@@ -78,22 +80,30 @@ function Сontacts({ width, handleClose }) {
               <input
                 className="contacts__input"
                 type="email"
+                name="email"
+                id="email"
                 minLength="2"
                 maxLength="40"
                 required
                 placeholder="EMAIL"
+                autoComplete="email"
               />
               <input
+                type="text"
                 className="contacts__input"
+                id="ptext"
                 minLength="2"
                 maxLength="100"
                 required
                 placeholder="Сообщение"
                 name="ptext"
+                autoComplete="off"
               ></input>
             </div>
             <button className="contacts__button">
-              <p className="contacts__button-text">Отправить</p>
+              <p className="contacts__button-text" type="submit">
+                Отправить
+              </p>
             </button>
           </form>
         </div>

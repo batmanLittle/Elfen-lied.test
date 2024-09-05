@@ -8,7 +8,15 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -17,6 +25,12 @@ html {
   -webkit-text-size-adjust: 100%; /* 2 */
 }
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%; /* Установите ширину на 100% */
+}
 /* Sections
        ========================================================================== */
 
@@ -40,11 +54,6 @@ main {
      * Correct the font size and margin on `h1` elements within `section` and
      * `article` contexts in Chrome, Firefox, and Safari.
      */
-
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
 
 /* Grouping content
        ========================================================================== */

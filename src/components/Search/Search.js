@@ -7,7 +7,13 @@ const Search = ({ handleClose, isCheckoutPage }) => {
     <div className="search">
       <div className="search__container">
         <img className="search__img" src={iconSearch} alt="иконка формы" />
-        <input className="search__input" type="text" placeholder="Поиск..." />
+        <input
+          className="search__input"
+          type="text"
+          placeholder="Поиск..."
+          name="text"
+          id="text"
+        />
         <div>
           <button
             className="search__button-close"

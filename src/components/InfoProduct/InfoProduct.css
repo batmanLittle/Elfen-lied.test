@@ -11,7 +11,6 @@
   padding: 20px 20px 20px 20px;
   max-width: 1920px;
   width: 100%;
-  max-height: 1060px;
 }
 
 .info-product__sliders {
@@ -24,10 +23,10 @@
 
 /* неактивный слайдер */
 .info-product__slider {
-  padding: 302px 0px 111px 0px;
+  padding: 302px 0px 90.51px 0px;
   flex: 0 1 18.09%;
   max-width: 340px;
-  max-height: 1060;
+  max-height: 1038px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -37,9 +36,9 @@
 
 /* общий активный слайдер */
 .info-product__slider-active {
-  max-height: 1060;
+  max-height: 1038px;
   height: 100%;
-  padding: 380px 0px 92px 60px;
+  padding: 380px 0px 72px 60px;
   flex: 0 1 61.7%;
   width: 100%;
   max-width: 1160px;
@@ -144,6 +143,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .info-product_shopping-card {
@@ -172,7 +172,9 @@
   font-size: 20px;
   line-height: 120%;
 }
-
+.info-product__counter {
+  display: none;
+}
 @media screen and (max-width: 1900px) {
   .info-product__text-background {
     white-space: nowrap;
@@ -220,7 +222,8 @@
   }
   .info-product__slider-active {
     border-bottom: 2px solid var(--light-green-color);
-    max-height: 1060px;
+    max-width: 100%;
+    max-height: min-content;
     height: 100%;
     padding: 200px 20px 70px 20px;
     flex: 0 1 100%;
@@ -244,6 +247,34 @@
 }
 
 @media screen and (max-width: 600px) {
+  .info-product__counter {
+    display: flex;
+    flex-direction: column;
+    width: 52px;
+    height: 143px;
+    background-color: var(--white-color);
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 8px;
+    right: 0px;
+    border-radius: 50px;
+  }
+  .info-product__counter-text {
+    color: var(--lilac-color);
+    font-family: Floreste;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .info-product__counter-dash {
+    border: 1px solid var(--lilac-color);
+    height: 36px;
+  }
   .info-product__container {
     padding: 77px 15px 0px 15px;
   }

@@ -33,7 +33,7 @@ function Categories() {
     if (selectedCategory) {
       const timer = setTimeout(() => {
         setLoading(false);
-      }, 1000);
+      });
 
       return () => clearTimeout(timer);
     }

@@ -1,7 +1,7 @@
 import "./App.css";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Сontacts from "../Сontacts/Сontacts";
 import Login from "../Login/Login";
@@ -17,7 +17,6 @@ function App() {
 
   const isCheckoutPage = location.pathname === "/checkout";
 
-  const [width, setWidth] = useState(window.innerWidth);
   const [modals, setModals] = useState({
     login: false,
     contacts: false,
@@ -35,6 +34,7 @@ function App() {
       carts: false,
       cartFavorite: false,
       search: false,
+
       [modalName]: true,
     });
   };
@@ -43,24 +43,9 @@ function App() {
     setModals((prev) => ({ ...prev, [modalName]: false }));
   };
 
-  const handleResize = () => {
-    setWidth(window.innerWidth);
-  };
-
-  useEffect(() => {
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
   return (
     <div className="app">
-      {modals.contacts ? (
-        <Сontacts handleClose={handleClose} width={width} />
-      ) : (
-        ""
-      )}
+      {modals.contacts ? <Сontacts handleClose={handleClose} /> : ""}
       {modals.login ? (
         <Login
           modals={modals}
@@ -107,7 +92,7 @@ function App() {
           element={
             <>
               <Header handleOpen={handleOpen} modals={modals} />
-              <Main width={width} />
+              <Main />
             </>
           }
         />
@@ -123,7 +108,6 @@ function App() {
               <OrderCheckout
                 handleClose={handleClose}
                 isCheckoutPage={isCheckoutPage}
-                width={width}
               />
             </>
           }

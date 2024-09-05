@@ -5,10 +5,10 @@ import Marquees from "../Marquees/Marquees";
 import Blog from "../Blog/Blog";
 import Footer from "../Footer/Footer";
 
-function Main({ width }) {
+function Main() {
   return (
     <main className="main">
-      <InfoProduct width={width} />
+      <InfoProduct />
       <Categories />
       <Marquees />
       <Blog />

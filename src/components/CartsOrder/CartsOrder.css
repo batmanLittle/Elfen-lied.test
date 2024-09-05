@@ -1,6 +1,7 @@
 .carts-order {
   position: relative;
   right: 0px;
+  z-index: 1;
 }
 
 .carts-order__list {

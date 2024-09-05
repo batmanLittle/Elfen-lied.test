@@ -4,7 +4,7 @@ import lamp from "../../images/product-lamp.png";
 import armchair from "../../images/product-armchair.png";
 import table from "../../images/product-table.png";
 import basket from "../../images/basket-green.svg";
-
+import useWindowWidth from "../../hooks/useWindowWidth";
 import "swiper/css/pagination";
 import "swiper/css/virtual";
 import "swiper/css/navigation";
@@ -15,7 +15,8 @@ import "swiper/css";
 import React, { useState, useEffect } from "react";
 import { Virtual, Navigation, Pagination } from "swiper/modules";
 
-function InfoProduct({ width }) {
+function InfoProduct() {
+  const width = useWindowWidth();
   const [activeSlide, setActiveSlide] = useState(0);
 
   SwiperCore.use([Autoplay]);
@@ -58,7 +59,7 @@ function InfoProduct({ width }) {
   ];
 
   useEffect(() => {
-    if (width > 1200) {
+    if (width >= 1200) {
       const intervalId = setInterval(() => {
         setActiveSlide((prev) => (prev + 1) % slides.length);
       }, 3000);
@@ -131,6 +132,13 @@ function InfoProduct({ width }) {
                     <button className="info-product_button">
                       <img src={basket} alt="корзина" /> <p>Купить</p>
                     </button>
+                  </div>
+                  <div className="info-product__counter">
+                    <p className="info-product__counter-text">0{index + 1}</p>
+                    <div className="info-product__counter-dash"></div>
+                    <p className="info-product__counter-text">
+                      0{slides.length}
+                    </p>
                   </div>
                 </div>
                 <img

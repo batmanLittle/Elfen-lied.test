@@ -2,8 +2,10 @@ import "./OrderCheckout.css";
 import Search from "../Search/Search";
 import CartsOrder from "../CartsOrder/CartsOrder";
 import Button from "../Button/Button";
+import useWindowWidth from "../../hooks/useWindowWidth";
 
-function OrderCheckout({ handleClose, isCheckoutPage, width }) {
+function OrderCheckout({ handleClose, isCheckoutPage }) {
+  const width = useWindowWidth();
   return (
     <section className="order-checkout">
       <Search handleClose={handleClose} />
@@ -15,11 +17,13 @@ function OrderCheckout({ handleClose, isCheckoutPage, width }) {
               Ваше имя
               <input
                 className="order-checkout__input"
+                id="name"
                 type="name"
                 name="name"
                 minLength="2"
                 maxLength="40"
                 required
+                autoComplete="name"
               />
             </label>
             <label className="order-checkout__label">
@@ -28,17 +32,22 @@ function OrderCheckout({ handleClose, isCheckoutPage, width }) {
                 className="order-checkout__input"
                 type="tel"
                 name="phone"
+                id="phone"
                 required
+                autoComplete="tel"
               />
             </label>
             <label className="order-checkout__label">
               Телефон
               <input
                 className="order-checkout__input"
+                type="text"
                 name="address"
+                id="address"
                 rows="4"
                 minLength="2"
-                maxLength="40"
+                maxLength="100"
+                autoComplete="address-line1"
                 required
               />
             </label>
