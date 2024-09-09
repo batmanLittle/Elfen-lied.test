@@ -34,7 +34,6 @@ function App() {
       carts: false,
       cartFavorite: false,
       search: false,
-
       [modalName]: true,
     });
   };
@@ -92,7 +91,11 @@ function App() {
           element={
             <>
               <Header handleOpen={handleOpen} modals={modals} />
-              <Main />
+              <Main
+                handleOpen={handleOpen}
+                handleClose={handleClose}
+                modals={modals}
+              />
             </>
           }
         />

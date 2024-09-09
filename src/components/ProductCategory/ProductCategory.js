@@ -2,13 +2,28 @@ import "./ProductCategory.css";
 import arrow from "../../images/arrow-down.svg";
 import React, { useState, useEffect } from "react";
 import Filters from "../Filters/Filters";
+import ProductModals from "../ProductModal/ProductModal";
+
 function ProductCategory({ cards }) {
   const [visibleCards, setVisibleCards] = useState(5);
   const [visibleFilters, setVisibleFilters] = useState(false);
 
-  function handlehandleOpen() {
+  function handleFiltersOpen() {
     setVisibleFilters((prevState) => !prevState);
   }
+
+  const [modals, setModals] = useState({ productModals: false });
+  const [currentCard, setCurrentCard] = useState(null);
+
+  const handleOpen = (card) => {
+    setCurrentCard(card);
+    setModals({ productModals: true });
+  };
+
+  const handleClose = () => {
+    setModals({ productModals: false });
+    setCurrentCard(null);
+  };
 
   const handleResize = () => {
     if (window.innerWidth < 1101) {
@@ -43,9 +58,16 @@ function ProductCategory({ cards }) {
 
   return (
     <div className="product-category">
+      {modals.productModals && currentCard && (
+        <ProductModals
+          modals={modals}
+          handleClose={handleClose}
+          card={currentCard}
+        />
+      )}
       <div className="product-category__menu">
         {visibleFilters && <Filters />}
-        <button onClick={handlehandleOpen}>
+        <button onClick={handleFiltersOpen}>
           <p className="product-category__filters">фильтры</p>
         </button>
         <p className="product-category__quantity">
@@ -54,7 +76,11 @@ function ProductCategory({ cards }) {
       </div>
       <ul className="product-category__list">
         {cards.slice(0, visibleCards).map((card) => (
-          <li className="product-category__item" key={card.id}>
+          <li
+            className="product-category__item"
+            key={card.id}
+            onClick={() => handleOpen(card)}
+          >
             <img
               className="product-category__item-img"
               src={card.src}

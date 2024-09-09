@@ -5,11 +5,11 @@ import Marquees from "../Marquees/Marquees";
 import Blog from "../Blog/Blog";
 import Footer from "../Footer/Footer";
 
-function Main() {
+function Main({ handleOpen }) {
   return (
     <main className="main">
       <InfoProduct />
-      <Categories />
+      <Categories handleOpen={handleOpen} />
       <Marquees />
       <Blog />
       <Footer />

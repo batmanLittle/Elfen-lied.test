@@ -12,7 +12,7 @@ import "swiper/swiper-bundle.css";
 import SwiperCore from "swiper";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Virtual, Navigation, Pagination } from "swiper/modules";
 
 function InfoProduct() {
@@ -58,15 +58,11 @@ function InfoProduct() {
     },
   ];
 
-  useEffect(() => {
+  const handleMouseEnter = (index) => {
     if (width >= 1200) {
-      const intervalId = setInterval(() => {
-        setActiveSlide((prev) => (prev + 1) % slides.length);
-      }, 3000);
-
-      return () => clearInterval(intervalId);
+      setActiveSlide(index);
     }
-  }, [width, slides.length]);
+  };
 
   return (
     <div className="info-product">
@@ -79,11 +75,6 @@ function InfoProduct() {
           }}
           modules={[Virtual, Navigation, Pagination]}
           slidesPerView={1}
-          // speed={900}
-          // autoplay={{
-          //   delay: 2000,
-          //   disableOnInteraction: false,
-          // }}
           breakpoints={{
             1200: {
               slidesPerView: 3,
@@ -107,6 +98,7 @@ function InfoProduct() {
                     ? "info-product__slider-lilac"
                     : ""
                 }`}
+                onMouseEnter={() => handleMouseEnter(index)}
               >
                 <div
                   className={

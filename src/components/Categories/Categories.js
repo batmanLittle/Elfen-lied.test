@@ -7,7 +7,7 @@ import { slides } from "../../utils/constants";
 import SwiperCore from "swiper";
 import { Autoplay } from "swiper/modules";
 
-function Categories() {
+function Categories({ handleOpen }) {
   SwiperCore.use([Autoplay]);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [activeButtonIndex, setActiveButtonIndex] = useState(null);
@@ -82,7 +82,10 @@ function Categories() {
         </Swiper>
       </div>
       {!loading && selectedCategory && (
-        <ProductCategory cards={selectedCategory || []} />
+        <ProductCategory
+          handleOpen={handleOpen}
+          cards={selectedCategory || []}
+        />
       )}
     </section>
   );

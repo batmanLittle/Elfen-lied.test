@@ -5,8 +5,10 @@ import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 import { useState, useRef, useEffect } from "react";
 import { slidesBlog } from "../../utils/constants";
+import useWindowWidth from "../../hooks/useWindowWidth";
 
 function Blog() {
+  const width = useWindowWidth();
   const [currentIndex, setCurrentIndex] = useState(0);
   const swiperRef = useRef();
 
@@ -52,7 +54,9 @@ function Blog() {
           </div>
           <h2 className="blog__title">Блог</h2>
           <div className="blog__counter">
-            <p className="font-floreste">0{currentIndex + 1}</p>
+            <p className="font-floreste">
+              0{width >= 780 ? currentIndex + 2 : currentIndex + 1}
+            </p>
             <div className="blog__counter-dash"></div>
             <p className="font-floreste">0{slidesBlog.length}</p>
           </div>

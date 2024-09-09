@@ -39,6 +39,8 @@ export const mirrors = [
     nameCategory: "Зеркало напольное",
     price: "150 000 ₽",
     dotColor: "dot-light-blue",
+    color: "голубой",
+    height: 60,
   },
   {
     id: 2,
@@ -48,6 +50,8 @@ export const mirrors = [
     nameCategory: "Зеркало напольное",
     price: "150 000 ₽",
     dotColor: "dot-light-pink",
+    color: "розовый",
+    height: 70,
   },
   {
     id: 3,
@@ -58,6 +62,8 @@ export const mirrors = [
     nameCategory: "Зеркало напольное",
     price: "150 000 ₽",
     dotColor: "dot-light-blue",
+    color: "голубой",
+    height: 90,
   },
   {
     id: 4,
@@ -68,6 +74,8 @@ export const mirrors = [
     nameCategory: "Зеркало напольное",
     price: "150 000 ₽",
     dotColor: "dot-light-peach",
+    color: "персик",
+    height: 50,
   },
   {
     id: 5,
@@ -78,6 +86,8 @@ export const mirrors = [
     nameCategory: "Зеркало напольное",
     price: "150 000 ₽",
     dotColor: "dot-light-pink",
+    color: "розовый",
+    height: 60,
   },
   {
     id: 6,
@@ -88,6 +98,8 @@ export const mirrors = [
     nameCategory: "Зеркало напольное",
     price: "150 000 ₽",
     dotColor: "dot-light-peach",
+    color: "персик",
+    height: 65,
   },
   {
     id: 7,
@@ -98,6 +110,8 @@ export const mirrors = [
     nameCategory: "Зеркало напольное",
     price: "150 000 ₽",
     dotColor: "dot-light-pink",
+    color: "розовый",
+    height: 55,
   },
   {
     id: 8,
@@ -108,6 +122,8 @@ export const mirrors = [
     nameCategory: "Зеркало напольное",
     price: "150 000 ₽",
     dotColor: "dot-light-pink",
+    color: "розовый",
+    height: 81,
   },
   {
     id: 9,
@@ -118,6 +134,8 @@ export const mirrors = [
     nameCategory: "Зеркало напольное",
     price: "150 000 ₽",
     dotColor: "dot-light-peach",
+    color: "персик",
+    height: 75,
   },
   {
     id: 10,
@@ -128,6 +146,8 @@ export const mirrors = [
     nameCategory: "Зеркало напольное",
     price: "150 000 ₽",
     dotColor: "dot-light-pink",
+    color: "розовый",
+    height: 82,
   },
 ];
 
@@ -140,6 +160,8 @@ export const lamps = [
     nameCategory: "Лампа настольная",
     price: "150 000 ₽",
     dotColor: "dot-light-peach",
+    color: "персик",
+    height: 40,
   },
   {
     id: 2,
@@ -149,6 +171,8 @@ export const lamps = [
     nameCategory: "Лампа настольная",
     price: "150 000 ₽",
     dotColor: "dot-green",
+    color: "зеленый",
+    height: 60,
   },
   {
     id: 3,
@@ -158,6 +182,8 @@ export const lamps = [
     nameCategory: "Лампа настольная",
     price: "150 000 ₽",
     dotColor: "dot-light-pink",
+    color: "розовый",
+    height: 50,
   },
   {
     id: 4,
@@ -167,6 +193,8 @@ export const lamps = [
     nameCategory: "Лампа настольная",
     price: "150 000 ₽",
     dotColor: "dot-turquoise",
+    color: "бирюзовый",
+    height: 70,
   },
   {
     id: 5,
@@ -176,6 +204,8 @@ export const lamps = [
     nameCategory: "Лампа настольная",
     price: "150 000 ₽",
     dotColor: "dot-light-blue",
+    color: "голубой",
+    height: 80,
   },
 ];
 
@@ -188,6 +218,8 @@ export const tables = [
     nameCategory: "Стол",
     price: "150 000 ₽",
     dotColor: "dot-light-blue",
+    color: "голубой",
+    height: 90,
   },
   {
     id: 2,
@@ -197,6 +229,8 @@ export const tables = [
     nameCategory: "Стол",
     price: "150 000 ₽",
     dotColor: "dot-light-peach",
+    color: "персик",
+    height: 60,
   },
   {
     id: 3,
@@ -206,6 +240,8 @@ export const tables = [
     nameCategory: "Стол",
     price: "150 000 ₽",
     dotColor: "dot-pink",
+    color: "розовый",
+    height: 100,
   },
   {
     id: 4,
@@ -215,6 +251,8 @@ export const tables = [
     nameCategory: "Стол",
     price: "150 000 ₽",
     dotColor: "dot-grey",
+    color: "серый",
+    height: 80,
   },
   {
     id: 5,
@@ -224,6 +262,8 @@ export const tables = [
     nameCategory: "Стол",
     price: "150 000 ₽",
     dotColor: "dot-light-pink",
+    color: "розовый",
+    height: 90,
   },
 ];
 
@@ -236,6 +276,8 @@ export const armchairs = [
     nameCategory: "Кресло",
     price: "150 000 ₽",
     dotColor: "dot-light-peach",
+    color: "персик",
+    height: 100,
   },
   {
     id: 2,
@@ -245,6 +287,8 @@ export const armchairs = [
     nameCategory: "Кресло",
     price: "150 000 ₽",
     dotColor: "dot-light-pink",
+    color: "розовый",
+    height: 100,
   },
   {
     id: 3,
@@ -254,6 +298,8 @@ export const armchairs = [
     nameCategory: "Кресло",
     price: "150 000 ₽",
     dotColor: "dot-pink",
+    color: "розовый",
+    height: 120,
   },
   {
     id: 4,
@@ -263,6 +309,8 @@ export const armchairs = [
     nameCategory: "Кресло",
     price: "150 000 ₽",
     dotColor: "dot-black",
+    color: "черный",
+    height: 130,
   },
   {
     id: 5,
@@ -272,6 +320,8 @@ export const armchairs = [
     nameCategory: "Кресло",
     price: "150 000 ₽",
     dotColor: "dot-light-pink",
+    color: "розовый",
+    height: 135,
   },
 ];
 
