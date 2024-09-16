@@ -1,4 +1,5 @@
 import "./CartItem.css";
+import { useModal } from "../../contexts/ModalContext";
 
 const CartItem = ({
   item,
@@ -7,8 +8,10 @@ const CartItem = ({
   shoppingCart,
   isCheckoutPage,
 }) => {
+  const { openModal } = useModal();
+
   return (
-    <div className="cart">
+    <div className="cart" onClick={() => openModal(item)}>
       <img className="cart__img" src={item.src} alt="лампа" />
       <div className="cart__description">
         <div className="cart__header">

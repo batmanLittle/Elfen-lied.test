@@ -44,66 +44,6 @@
   flex-wrap: wrap;
 }
 
-.product-category__item {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 100%;
-  max-width: 274px;
-}
-
-.product-category__item-img {
-  max-height: 260px;
-  max-width: 274px;
-  margin-bottom: 32px;
-}
-
-.product-category__item-dot {
-  position: absolute;
-  left: 0px;
-  top: 5px;
-  border: 3px solid var(--white-color);
-  border-radius: 50%;
-  width: 26px;
-  height: 26px;
-}
-
-.product-category__item-description {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.product-category__item-category {
-  margin-bottom: 26px;
-  border-bottom: 2px solid var(--light-green-color);
-  padding-bottom: 19px;
-  width: 100%;
-  text-align: center;
-}
-
-.product-category__item-buy {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.product-category__item-price {
-  font-size: 28px;
-  letter-spacing: 1.12px;
-}
-.product-category__item-button {
-  display: flex;
-  gap: 11px;
-  align-items: center;
-}
-.product-category__item-button::before {
-  content: "";
-  background-image: url(../../images/basket-green.svg);
-  width: 24px;
-  height: 24px;
-}
-
 .product-category__button {
   width: 319px;
   height: 135px;
@@ -133,50 +73,6 @@
     gap: 50px;
     margin-bottom: 51px;
   }
-  .product-category__item {
-    flex-direction: row;
-    position: relative;
-    width: 100%;
-    max-width: 360px;
-    justify-content: space-between;
-    gap: 32px;
-  }
-
-  .product-category__item-img {
-    max-height: 120px;
-    margin-bottom: 0px;
-    min-width: 100px;
-  }
-
-  .product-category__item-name {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 13px;
-  }
-  .product-category__item-dot {
-    position: relative;
-    top: 0px;
-    width: 16px;
-    height: 16px;
-  }
-  .product-category__item-category {
-    text-align: start;
-    padding-bottom: 15px;
-  }
-
-  .product-category__item-description {
-    width: 100%;
-  }
-
-  .product-category__item-price {
-    font-size: 25px;
-    letter-spacing: 1px;
-  }
-  .product-category__item-button {
-    gap: 8px;
-  }
 }
 
 @media screen and (max-width: 700px) {
@@ -185,8 +81,5 @@
     width: 100%;
     gap: 50px;
     margin-bottom: 51px;
-  }
-  .product-category__item {
-    gap: 32px;
   }
 }

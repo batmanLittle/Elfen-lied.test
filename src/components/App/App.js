@@ -11,10 +11,11 @@ import CartFavorite from "../CartFavorite/CartFavorite";
 import Search from "../Search/Search";
 import OrderCheckout from "../OrderCheckout/OrderCheckout";
 import { useLocation } from "react-router-dom";
+import ProductModals from "../ProductModal/ProductModal";
+import { ModalProvider } from "../../contexts/ModalContext";
 
 function App() {
   const location = useLocation();
-
   const isCheckoutPage = location.pathname === "/checkout";
 
   const [modals, setModals] = useState({
@@ -44,78 +45,82 @@ function App() {
 
   return (
     <div className="app">
-      {modals.contacts ? <Сontacts handleClose={handleClose} /> : ""}
-      {modals.login ? (
-        <Login
-          modals={modals}
-          handleOpen={handleOpen}
-          handleClose={handleClose}
-        />
-      ) : (
-        ""
-      )}
-      {modals.registr ? (
-        <Registr
-          modals={modals}
-          handleOpen={handleOpen}
-          handleClose={handleClose}
-        />
-      ) : (
-        ""
-      )}
-      {modals.carts ? (
-        <Carts
-          setModals={setModals}
-          modals={modals}
-          handleOpen={handleOpen}
-          handleClose={handleClose}
-          isCheckoutPage={isCheckoutPage}
-        />
-      ) : (
-        ""
-      )}
-      {modals.search ? (
-        <Search
-          modals={modals}
-          handleClose={handleClose}
-          isCheckoutPage={isCheckoutPage}
-        />
-      ) : (
-        ""
-      )}
+      <ModalProvider>
+        <ProductModals />
 
-      {modals.cartFavorite ? <CartFavorite handleClose={handleClose} /> : ""}
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Header handleOpen={handleOpen} modals={modals} />
-              <Main
-                handleOpen={handleOpen}
-                handleClose={handleClose}
-                modals={modals}
-              />
-            </>
-          }
-        />
-        <Route
-          path="/checkout"
-          element={
-            <>
-              <Header
-                handleOpen={handleOpen}
-                modals={modals}
-                isCheckoutPage={isCheckoutPage}
-              />
-              <OrderCheckout
-                handleClose={handleClose}
-                isCheckoutPage={isCheckoutPage}
-              />
-            </>
-          }
-        />
-      </Routes>
+        {modals.contacts ? <Сontacts handleClose={handleClose} /> : ""}
+        {modals.login ? (
+          <Login
+            modals={modals}
+            handleOpen={handleOpen}
+            handleClose={handleClose}
+          />
+        ) : (
+          ""
+        )}
+        {modals.registr ? (
+          <Registr
+            modals={modals}
+            handleOpen={handleOpen}
+            handleClose={handleClose}
+          />
+        ) : (
+          ""
+        )}
+        {modals.carts ? (
+          <Carts
+            setModals={setModals}
+            modals={modals}
+            handleOpen={handleOpen}
+            handleClose={handleClose}
+            isCheckoutPage={isCheckoutPage}
+          />
+        ) : (
+          ""
+        )}
+        {modals.search ? (
+          <Search
+            modals={modals}
+            handleClose={handleClose}
+            isCheckoutPage={isCheckoutPage}
+          />
+        ) : (
+          ""
+        )}
+
+        {modals.cartFavorite ? <CartFavorite handleClose={handleClose} /> : ""}
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Header handleOpen={handleOpen} modals={modals} />
+                <Main
+                  handleOpen={handleOpen}
+                  handleClose={handleClose}
+                  modals={modals}
+                />
+              </>
+            }
+          />
+          <Route
+            path="/checkout"
+            element={
+              <>
+                <Header
+                  handleOpen={handleOpen}
+                  modals={modals}
+                  isCheckoutPage={isCheckoutPage}
+                />
+                <OrderCheckout
+                  handleClose={handleClose}
+                  isCheckoutPage={isCheckoutPage}
+                />
+              </>
+            }
+          />
+        </Routes>
+      </ModalProvider>
     </div>
   );
 }

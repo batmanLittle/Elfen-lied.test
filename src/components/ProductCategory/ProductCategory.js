@@ -2,7 +2,7 @@ import "./ProductCategory.css";
 import arrow from "../../images/arrow-down.svg";
 import React, { useState, useEffect } from "react";
 import Filters from "../Filters/Filters";
-import ProductModals from "../ProductModal/ProductModal";
+import ItemProduct from "../ItemProduct/ItemProduct";
 
 function ProductCategory({ cards }) {
   const [visibleCards, setVisibleCards] = useState(5);
@@ -11,19 +11,6 @@ function ProductCategory({ cards }) {
   function handleFiltersOpen() {
     setVisibleFilters((prevState) => !prevState);
   }
-
-  const [modals, setModals] = useState({ productModals: false });
-  const [currentCard, setCurrentCard] = useState(null);
-
-  const handleOpen = (card) => {
-    setCurrentCard(card);
-    setModals({ productModals: true });
-  };
-
-  const handleClose = () => {
-    setModals({ productModals: false });
-    setCurrentCard(null);
-  };
 
   const handleResize = () => {
     if (window.innerWidth < 1101) {
@@ -58,13 +45,6 @@ function ProductCategory({ cards }) {
 
   return (
     <div className="product-category">
-      {modals.productModals && currentCard && (
-        <ProductModals
-          modals={modals}
-          handleClose={handleClose}
-          card={currentCard}
-        />
-      )}
       <div className="product-category__menu">
         {visibleFilters && <Filters />}
         <button onClick={handleFiltersOpen}>
@@ -76,37 +56,7 @@ function ProductCategory({ cards }) {
       </div>
       <ul className="product-category__list">
         {cards.slice(0, visibleCards).map((card) => (
-          <li
-            className="product-category__item"
-            key={card.id}
-            onClick={() => handleOpen(card)}
-          >
-            <img
-              className="product-category__item-img"
-              src={card.src}
-              alt={card.alt}
-            />
-            <div className="product-category__item-description">
-              <div className="product-category__item-name">
-                <div
-                  className={`product-category__item-dot ${card.dotColor}`}
-                ></div>
-                <h3>{card.name}</h3>
-              </div>
-              <p className="product-category__item-category">
-                {card.nameCategory}
-              </p>
-
-              <div className="product-category__item-buy">
-                <p className="product-category__item-price font-floreste ">
-                  {card.price}
-                </p>
-                <button className="product-category__item-button">
-                  <p>Купить</p>
-                </button>
-              </div>
-            </div>
-          </li>
+          <ItemProduct card={card} key={card.id} />
         ))}
       </ul>
       {visibleCards < cards.length && (

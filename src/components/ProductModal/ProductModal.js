@@ -2,19 +2,19 @@ import "./ProductModal.css";
 import iconClose from "../../images/icon-close.svg";
 import iconFavorite from "../../images/icon-favorite.svg";
 import basket from "../../images/basket-green.svg";
+import { useModal } from "../../contexts/ModalContext";
 
-function ProductModal({ handleClose, card }) {
+function ProductModal() {
+  const { isOpen, closeModal, selectedCard } = useModal();
+  if (!isOpen || !selectedCard) return null;
   return (
     <div className="product-modal">
-      <div className="product-modal__container" key={card.id}>
-        <img className="product-modal__img" src={card.src} alt="" />
+      <div className="product-modal__container" key={selectedCard.id}>
+        <img className="product-modal__img" src={selectedCard.src} alt="" />
         <div className="product-modal__close">
           <p className="product-modal__close-text">закрыть</p>
-          <button
-            className="product-modal__close-button"
-            onClick={() => handleClose("productModals")}
-          >
-            <img alt={card.alt} src={iconClose} />
+          <button className="product-modal__close-button" onClick={closeModal}>
+            <img alt={selectedCard.alt} src={iconClose} />
           </button>
         </div>
         <div className="product-modal__properties">
@@ -30,12 +30,18 @@ function ProductModal({ handleClose, card }) {
             <p className="product-modal__properties-text product-modal__none">
               Цвет:
             </p>
-            <div className={`product-modal__dot ${card.dotColor}`}></div>
-            <p className="product-modal__properties-text">{card.color}</p>
+            <div
+              className={`product-modal__dot ${selectedCard.dotColor}`}
+            ></div>
+            <p className="product-modal__properties-text">
+              {selectedCard.color}
+            </p>
           </div>
           <div className="product-modal__text-height">
             <p className="product-modal__properties-text">Высота:</p>
-            <p className="product-modal__properties-text">{card.height} см</p>
+            <p className="product-modal__properties-text">
+              {selectedCard.height} см
+            </p>
           </div>
         </div>
         <p className="product-modal__background-text font-floreste">
@@ -47,8 +53,12 @@ function ProductModal({ handleClose, card }) {
             комфортного освещения
           </p>
           <div className="product-modal__footer-block">
-            <p className="font-floreste product-modal__name">{card.name}</p>
-            <p className="font-floreste product-modal__price">{card.price}</p>
+            <p className="font-floreste product-modal__name">
+              {selectedCard.name}
+            </p>
+            <p className="font-floreste product-modal__price">
+              {selectedCard.price}
+            </p>
           </div>
           <div className="product-modal_shopping-card">
             <button className="product-modal_button">

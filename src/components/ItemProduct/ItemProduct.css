@@ -1,0 +1,113 @@
+.item-product {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  max-width: 274px;
+}
+
+.item-product__img {
+  max-height: 260px;
+  max-width: 274px;
+  margin-bottom: 32px;
+}
+.item-product__description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.item-product__dot {
+  position: absolute;
+  left: 0px;
+  top: 5px;
+  border: 3px solid var(--white-color);
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+}
+
+.item-product__category {
+  margin-bottom: 26px;
+  border-bottom: 2px solid var(--light-green-color);
+  padding-bottom: 19px;
+  width: 100%;
+  text-align: center;
+}
+
+.item-product__buy {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item-product__price {
+  font-size: 28px;
+  letter-spacing: 1.12px;
+}
+
+.item-product__button {
+  display: flex;
+  gap: 11px;
+  align-items: center;
+}
+.item-product__button::before {
+  content: "";
+  background-image: url(../../images/basket-green.svg);
+  width: 24px;
+  height: 24px;
+}
+
+@media screen and (max-width: 1100px) {
+  .item-product {
+    flex-direction: row;
+    position: relative;
+    width: 100%;
+    max-width: 360px;
+    justify-content: space-between;
+    gap: 32px;
+  }
+
+  .item-product__img {
+    max-height: 120px;
+    margin-bottom: 0px;
+    min-width: 100px;
+  }
+
+  .item-product__name {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 13px;
+  }
+  .item-product__dot {
+    position: relative;
+    top: 0px;
+    width: 16px;
+    height: 16px;
+  }
+  .item-product__category {
+    text-align: start;
+    padding-bottom: 15px;
+  }
+
+  .item-product__description {
+    width: 100%;
+  }
+
+  .item-product__price {
+    font-size: 25px;
+    letter-spacing: 1px;
+  }
+  .item-product__button {
+    gap: 8px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .item-product {
+    gap: 32px;
+  }
+}
